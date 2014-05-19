@@ -1,0 +1,20 @@
+	/* 
+		THIS IS LESS CODE FOR REPLY-PADDING
+	HQWATER 20140506
+
+	http://jos39.tistory.com/185
+	http://baepower.wordpress.com/2012/05/25/css%EB%A5%BC-%EC%8B%AC%ED%94%8C%ED%95%98%EA%B2%8C-less%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4-%EB%B4%A4%EB%8B%A4/
+
+	http://stackoverflow.com/questions/15239785/how-to-generate-css-with-loop-in-less
+
+	*/
+
+@iterations: 25;
+.level-loop (@i) when (@i > 0) {
+    .level-@{i} {
+    	@ii:@i*2;
+        padding-left : ~'@{ii}em';
+    }
+    .level-loop(@i - 0.5);
+}
+.level-loop (@iterations);
